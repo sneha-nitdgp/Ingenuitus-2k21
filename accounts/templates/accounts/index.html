@@ -1,0 +1,327 @@
+
+{% load static %}
+
+{% block title %}{% endblock title %}
+{% block content %}
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+  @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+
+
+
+h1 {
+ font-size:5em;
+ font:bold 7.5vw/1.6 'Signika', sans-serif;
+ user-select:none;
+}
+
+h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
+}
+body:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ animation-delay:.05s; }
+h1 span:nth-child(3){ animation-delay:.1s; }
+h1 span:nth-child(4){ animation-delay:.15s; }
+h1 span:nth-child(5){ animation-delay:.2s; }
+h1 span:nth-child(6){ animation-delay:.25s; }
+h1 span:nth-child(7){ animation-delay:.3s; }
+h1 span:nth-child(8){ animation-delay:.35s; }
+h1 span:nth-child(9){ animation-delay:.4s; }
+h1 span:nth-child(10){ animation-delay:.45s; }
+h1 span:nth-child(11){ animation-delay:.5s; }
+h1 span:nth-child(12){ animation-delay:.55s; }
+h1 span:nth-child(13){ animation-delay:.6s; }
+h1 span:nth-child(14){ animation-delay:.65s; }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    background: url("{% static 'response/images/industry.jpg' %}") no-repeat top center;
+    background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    -webkit-background-size:cover;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+  .b1 {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: table;
+    background-size: cover;
+  }
+
+  .b1 .in1 {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+  }
+
+  .content {
+    margin: auto;
+    text-align: center;
+    margin-top: -200px;
+
+  }
+
+  .content h1 {
+    font-family: 'Century Gothic', sans-serif;
+    color: #000000;
+    font-size: 400%;
+    text-shadow: 0 0 300px #000;
+    margin-bottom: 100px;
+  }
+
+  .content .btn {
+    border-radius: 9px;
+    color: #000000
+;
+    text-decoration: none;
+    font-family: 'Century Gothic', sans-serif;
+    border: 3px solid;
+    padding: 7px 13px;
+    font-weight: bold;
+  }
+
+  .content .btn:hover {
+    color: #636161;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .content h1 {
+      font-size: 200%;
+      margin-bottom: 50px;
+    }
+
+  }
+
+
+
+
+  /*cursor animation*/
+  .cursor {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ccffff;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s
+  }
+
+  .cursor2 {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: yellow;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+  }
+
+
+
+
+  /*footer styling */
+  footer {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    background: #001121 !important;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 10px;
+    color: #fff;
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1rem;
+  }
+
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem 0 .5rem 0;
+  }
+
+  .socials li {
+    margin: 0 10px;
+  }
+
+  .socials a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .socials a i {
+    font-size: 1.2rem;
+    transition: color .4s ease;
+
+  }
+
+  .socials a:hover i {
+    color: #6FDEFF;
+  }
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 62.5vw;
+    height: 37.878787878787875vh;
+    margin: 0 auto;
+}
+@media (max-width: 500px)
+{
+    svg{
+        width: 100%;
+    }
+}
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: #ccffff;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: #9999ff;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: #BD0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: #BD0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: #FDB731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
+}
+
+</style>
+</head>
+
+        <div class="logo">
+            <img style="width:150;height:60px;padding:5px;"  src="{% static 'response/images/logo.png' %}">
+         </div>
+<section class="b1">
+  <div class="in1">
+    <div class="content">
+     <h1><span>I</span><span>N</span><span>G</span><span>E</span><span>N</span><span> </span><span>U</span><span>I</span><span>T</span><span>U</span><span> </span><span>S</span></h1>
+	      {% if user.is_authenticated %}
+         <!----  <a class="btn" href="/response/index.html" style="color:  #ccffff">Proceed to problem Statement.</a>-->
+        {% else %}
+            <a class="btn" href="{% url 'get_question_not_logged' %}" style="color:  #ccffff">View problem Statement.</a><br><br><br>
+            <a class="btn" href="{% url 'teamregistration' %}" style="color:  #ccffff">Register your Team</a><br><br><br>
+	   <!---- <a class="btn" href="{% url 'register' %}" style="color: #ccffff">Sign Up</a><br><br><br>
+            <a class="btn" href="{% url 'login' %}" style="color:  #ccffff">Login</a>-->
+            <a class="btn"  style="color: #FFFF00">Submission starts from 2nd April 12:01 AM</a>
+
+        {% endif %}
+        <br><br><br>
+            <a class="btn" href="{% url 'rules' %}" style="color:  #ccffff">Rules</a>
+        
+    </div>
+  </div>
+
+  <footer>
+        <div class="footer-content">
+            <ul class="socials">
+                <img style="width:150;height:60px;padding:5px;"  src="{% static 'response/images/bluelogo2.png' %}">
+            </ul>
+        </div>
+
+</footer>
+
+</section>
+<div class="cursor"></div>
+<div class="cursor2"></div>
+
+
+
+<!--cursor script-->
+<script>
+  var cursor = document.querySelector(".cursor");
+  var cursor2 = document.querySelector(".cursor2");
+  document.addEventListener("mousemove", function (e) {
+    cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+  });
+</script>
+
+
+</body>
+</html>
+{% endblock %}

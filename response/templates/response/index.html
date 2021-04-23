@@ -1,0 +1,203 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+{% block title %}Question{% endblock title %}
+{% block styles %}
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: url("{% static 'response/images/industry5.jpg' %}") no-repeat top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 60%;
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.wrapper .title h1{
+  font-size:15px;
+  color: #ccffff;
+  text-align: left;
+  overflow: hidden;
+   -moz-hyphens:auto;
+-ms-hyphens:auto;
+-webkit-hyphens:auto;
+hyphens:auto;
+word-wrap:break-word;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.contact-form{
+  display: flex;
+}
+
+.input-fields{
+
+  margin-right: 4%;
+}
+
+.input-fields,
+.msg{
+  width: 100%;
+}
+
+.input-fields .input,
+.msg textarea{
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #c5ecfd;
+  padding: 10px;
+  color:  #ccffff;
+  width: 500px;
+}
+
+.msg textarea{
+  height: 30px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color:  #ccffff;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ccffff;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color:  #ccffff;
+}
+
+button{
+    background: #003366;
+    width:100%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px){
+  .contact-form{
+    flex-direction: column;
+  }
+  .msg textarea{
+    height: 20px;
+  }
+  .input-fields,
+  .msg{
+    width: 100%;
+  }
+  h5{
+      font-size: 0.6em;
+  }
+  .wrapper{
+    max-width: 80%;
+  }
+}
+
+
+
+
+.wrapper .title h2{
+  font-size:20px;
+  color: #ccffff;
+  text-align: center;
+  overflow: hidden;
+   -moz-hyphens:auto;
+-ms-hyphens:auto;
+-webkit-hyphens:auto;
+hyphens:auto;
+word-wrap:break-word;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+ 
+
+</style>
+{% endblock styles %}
+{% block content %}
+
+
+<div class="wrapper">
+  <div class="contact-form">
+  <form method="post">
+    {% csrf_token %}
+    <div class="title">
+      <h2>PROBLEM STATEMENTS</h2>
+   <h1>Ingenuitus provides a platform to analyze some key challenges faced by leading industrial sectors and propose feasible solutions that can be adopted and implemented over wide scale. We invite participants in teams consisting of 1-3 members to analyze one among the given problem tracks and work together to prepare a presentation pitching the best solution. From the range of given problem tracks participants need to select one among the following tracks and submit their presentations by 4th April 7 am . We will be conducting Ingenuitus on virtual platform on 4th April starting from 10 am where teams will have to present their solutions to the judges. <br>
+     <br>
+     Problem Tracks  for the participants
+     (Select one among the below tracks) <br>
+      <br>
+     1)	Track : 5G <br>
+     The extent of deployment of the 5G network communication in the automobile industry
+     The evolution of cellular network technologies has always been fascinating with its advanced network features offered by every generation. The transition from 4G to 5G will not be as difficult as the previous transitions and huge applications of this 5th generation can be implemented in various fields.  But every generation of cellular communication technology comes with its problems and limitations along with its benefits. Analyze how can the 5G technology reform the automobile industry and the limitations in practicality of the achieving the advantages.
+     <br><br>
+     2)Track IOT and Smart City: <br>
+     The Solution to inculcate Social Inclusiveness while bridging digital divide as one of the key challenges offered by Smart Cities.
+     What about the people who can’t afford the smart gadgets or the group of elderly people who find it difficult to get accustomed with the new smart technologies? It’s crucial that Smart City planning involves the consideration of all groups of people and not just the well off and technologically advanced groups. Technologies should always function attaining social inclusiveness at all standards rather than dividing them. Propose solutions to bring in advancement offered by the smart cities to every section of the society.
+     <br> <br>
+     3)Track : Autonomous Vehicle <br>
+     Technology deployed for preventing accidents and ensuring safety in regard to Autonomous Vehicle.
+     
+     In this modernized world, Driver assistive technologies have been in trend because of the increase in cases over unexpected accidents derailing the world and leading to loss of precious lives. Driver Assistive technology has been tested in various vehicles till date. Analyse the successful and failed attempts where this technology has been incorporated in vehicles. Prepare a proposal on their future scope in fully autonomous vehicles.
+     
+     
+     
+     <br> <br>
+     4)Track: Electric Vehicle <br>                                                       
+     Technologies used in the manufacturing of Storage of electrical energy for Electric Vehicles and their efficiency at various physical conditions.
+     As the new era of Electric vehicles geared up the main fuel for them is electric energy. The energy needs to be stored and reproduced as efficiently as possible. Many technologies have been proposed and are being implemented for this. Analyse the different technology and turning up the pros & cons of each technology come up with an optimal and innovative solution for better efficiency keeping in view the environmental hazards associated and the future scope of technology.
+     <br>
+   </h1>
+ </div>
+    {% if response %}
+    <div class="msg">
+      <textarea name="response" class="ans" placeholder={{response}}></textarea>
+    </div>
+    <div class="center">
+      <button class="button1" class="btn" type="submit">Update</button>
+    </div>
+    {%else%}
+    <div class="msg">
+      <textarea name="response" class="ans" placeholder="Paste the drive link of your work"></textarea>
+    </div>
+    <div class="center">
+      <button class="button1" class="btn" type="submit" style="height: 6vh" >Submit</button>
+    </div>
+    
+    {% endif %}
+  </form>
+</div>
+</div>
+
+
+{% endblock %}

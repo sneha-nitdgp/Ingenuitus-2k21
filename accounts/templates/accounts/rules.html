@@ -1,0 +1,158 @@
+
+{% extends 'base2.html' %}
+
+{% load static %}
+{% block title %}Question{% endblock title %}
+{% block styles %}
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: url("{% static 'response/images/industry.jpg' %}") no-repeat top center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.wrapper{
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 550px;
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.wrapper .title h1{
+  font-size:15px;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+   -moz-hyphens:auto;
+-ms-hyphens:auto;
+-webkit-hyphens:auto;
+hyphens:auto;
+word-wrap:break-word;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.contact-form{
+  display: flex;
+}
+
+.input-fields{
+
+  margin-right: 4%;
+}
+
+.input-fields,
+.msg{
+  width: 100%;
+}
+
+.input-fields .input,
+.msg textarea{
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #c5ecfd;
+  padding: 10px;
+  color: #ffffff;
+  width: 500px;
+}
+
+.msg textarea{
+  height: 212px;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: white;
+}
+
+button{
+    background: darkmagenta;
+    width:100%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+
+
+
+.wrapper .title h2{
+  font-size:25px;
+  color:  #ccffff;
+  text-align: center;
+  overflow: hidden;
+   -moz-hyphens:auto;
+-ms-hyphens:auto;
+-webkit-hyphens:auto;
+hyphens:auto;
+word-wrap:break-word;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 500px)
+{
+    li,p {
+        font-size: 0.7em;
+    }
+}
+</style>
+{% endblock styles %}
+{% block content %}
+
+
+<div class="wrapper">
+  <div class="contact-form">
+    <div class="title" style="color:  #ccffff;">
+         <h2>Rules for Round 1</h2>
+         <ol>
+         	Participants can register solo or in teams consisting of maximum 3 members. <br>
+<li>	From the given range of problem tracks teams must select one of the problem and prepare presentation consisting of maximum 10 slides .</l1> <br>
+<li>		The submission for presentation will begin from 2nd April 1201 hours and will close at 4th April 7 am. </l1><br>
+<li>	On 4th April 10 am onwards we will be conducting the virtual round of Ingenuitus where participants will have to present their solution in front of the judges over Google meet. The details of the meet will be shared later. </l1><br>
+<li>		The judging will be done based on feasibility and uniqueness of the proposed solution.</l1> <br>
+</ol>
+        <br>
+        
+    </div>
+</div>
+</div>
+<footer>
+        <div class="footer-content">
+            <ul class="socials">
+                <img style="width:150;height:60px;padding:5px;"  src="{% static 'response/images/bluelogo2.png' %}">
+            </ul>
+        </div>
+
+</footer>
+{% endblock %}
